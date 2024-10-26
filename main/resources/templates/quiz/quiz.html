@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Quiz Room</title>
+    <link rel="stylesheet" href="/css/quiz/waiting-screen.css">
+</head>
+<body>
+<div id="waitingStatusItemDiv" class="waiting-screen" style="visibility: hidden;">
+    <h2 id="message">현재 퀴즈가 종료될 때까지 잠시만 기다려주세요.</h2>
+</div>
+
+<div id="quizContainer">
+    <div><div id="quizId"></div> <input type="text" placeholder="여기에 이름/별명을 입력하세요" id="nameInput">  <div id="quizStatement"></div> <div id="countdown"></div>
+</div>
+<div id="optionsContainer"></div>
+
+<div id="quizResultContainer">
+    <div id="statement"></div> <div id="quizAnswer"></div> <div id="myAnswer"></div> <div id="isCorrect"></div>
+</div>
+
+<div id="guideMessageContainer"></div>
+
+<script src="/js/common/config.js"></script>
+<script src="/js/quiz/item-control-func.js"></script>
+<script src="/js/quiz/quiz-result-func.js"></script>
+<script src="/js/quiz/guideMessageFunc.js"></script>
+<script src="/js/quiz/websocket-connect.js"></script>
+</body>
+</html>

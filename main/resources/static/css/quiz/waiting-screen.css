@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff4e50, #fc913a);
+        /* linear-gradient(135deg, #ff4e50, #fc913a) 레드-오렌지 대기 상태
+        background: linear-gradient(135deg, #00c6ff, #0072ff) 블루-퍼플 옵션 버튼
+        background: linear-gradient(135deg, #ff6a88, #ff99c8) 핑크-퍼플
+        background: linear-gradient(135deg, #00b09b, #96c93d) 그린-블루 옵션 버튼 컨테이너
+        background: linear-gradient(135deg, #ff5f6d, #ffc371) 오렌지-레드
+        background: linear-gradient(135deg, #4e54c8, #8f94fb) 블루-그레이
+        */
+    color: white; /* 모든 글씨 색을 흰색으로 변경 */
+    padding: 20px;
+}
+
+#waitingScreen {
+    font-size: 24px;
+    color: #ff4e50;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#quizContainer {
+    background-color: transparent; /* 무색으로 변경 */
+    padding: 20px;
+    width: 90%;
+    margin: 10px auto;
+}
+
+#quizId {
+    float: left;
+    width:5%;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#quizStatement {
+    float: left;
+    margin: 0px 5%;
+    width:75%;
+    box-sizing: border-box;
+    font-size: 60px; /* 글씨 크기를 2배로 키움 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+#countdown {
+    float: right;
+    width:5%;
+    box-sizing: border-box;
+    font-size: 70px;
+}
+
+#optionsContainer {
+    background: linear-gradient(135deg, #00b09b, #96c93d); /* 무색으로 변경 */
+    position: absolute; /* 절대 위치 지정 */
+    top: calc(100px + 30% + 20px); /* QuizContainer 아래에 위치 */
+    left: 20px; /* 좌측에서 20px 거리 */
+    width: 90%; /* 화면 전체 넓이의 90% */
+    height: 50%; /* 화면 전체 높이의 50% */
+    display: flex;
+    flex-direction: column; /* 수직 배치 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 중앙 정렬 */
+}
+
+
+#optionsContainer {
+    background: linear-gradient(135deg, #00b09b, #96c93d); /* 무색으로 변경 */
+    position: absolute; /* 절대 위치 지정 */
+    top: calc(100px + 30% + 20px); /* QuizContainer 아래에 위치 */
+    left: 20px; /* 좌측에서 20px 거리 */
+    width: 90%; /* 화면 전체 넓이의 90% */
+    height: 50%; /* 화면 전체 높이의 50% */
+    display: grid; /* 그리드 레이아웃 사용 */
+    grid-template-columns: repeat(3, 1fr); /* 3개의 열, 각 열은 동일한 비율 */
+    grid-template-rows: repeat(3, 1fr); /* 3개의 행, 각 행은 동일한 비율 */
+    gap: 10px; /* 요소 간의 간격 (필요시 조정) */
+    justify-items: center; /* 각 그리드 아이템의 수평 중앙 정렬 */
+    align-items: center; /* 각 그리드 아이템의 수직 중앙 정렬 */
+}
+
+button {
+    background-color: #fc913a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    /*width: 80%; /* 버튼의 너비를 80%로 설정 */
+    margin: 5px; /* 여백 추가 */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff6a88;
+}
+
+.optionButton {
+    background: linear-gradient(135deg, #ff6a88, #ff99c8) /* 기본 배경색 */
+    border: 1px solid #ccc;
+    /* padding: 20px; */
+    cursor: pointer;
+    color: white;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    font-size: 40px;
+    width: 100%;  /* 가로 크기를 30%로 설정 */
+    height: 100%; /* 세로 크기를 30%로 설정 */
+    box-sizing: border-box; /* padding, border 포함하여 크기 계산 */
+}
+
+.optionButton.clicked {
+    background-color: #4CAF50; /* 클릭된 버튼의 배경색 */
+    color: white; /* 클릭된 버튼의 글자색 */
+}
+
+.optionButton:disabled {
+    background-color: #ddd; /* 비활성화된 버튼 색상 */
+    cursor: not-allowed; /* 마우스 커서 변경 */
+}
+
+
+.hidden {
+    height: 0; /* 높이를 0으로 설정 */
+    width: 0; /* 너비를 0으로 설정 */
+    opacity: 0; /* 불투명도를 0으로 설정 */
+    overflow: hidden; /* 내용이 넘치지 않도록 숨김 */
+    transition: height 0.3s ease, width 0.3s ease, opacity 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+#quizResultContainer {
+    border: 1px solid #ccc; /* 테두리 */
+    border-radius: 5px; /* 둥근 모서리 */
+    padding: 20px; /* 내부 여백 */
+    margin-top: 20px; /* 상단 여백 */
+    background: linear-gradient(135deg, #ff6a88, #ff99c8); /* 배경색 */
+
+}
+
+#statement {
+    font-size: 40px; /* 글자 크기 */
+    font-weight: bold; /* 글자 두께 */
+    margin-bottom: 10px; /* 하단 여백 */
+}
+
+#isCorrect {
+    font-size: 40px; /* 글자 크기 */
+    font-weight: bold; /* 글자 두께 */
+    margin-bottom: 10px; /* 하단 여백 */
+}
+
+#quizAnswer, #myAnswer {
+    font-size: 40px; /* 글자 크기 */
+    margin: 5px 0; /* 상하 여백 */
+}
+
+#guideMessageContainer {
+    left: 50%; /* 중앙 정렬을 위해 왼쪽 50% */
+    background-color: rgba(0, 0, 0, 0.8); /* 반투명 배경 */
+    color: white; /* 텍스트 색상 */
+    font-size: 60px;
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 애니메이션 효과 */
+}
