@@ -1,12 +1,9 @@
-// 웹소켓 연결을 위한 주소
 const wsUrl = 'ws://' + BACKEND_BASE_URL + '/quiz';
 
-// 웹소켓을 활용하여 연결을 시도합니다.
 const socket = new WebSocket(wsUrl);
 
 socket.onopen = function() {
     console.log('웹소켓 연결 성공');
-    // 추가적인 로직을 여기에 작성할 수 있습니다.
     waitingStatusItemOn();
 };
 
@@ -22,7 +19,7 @@ socket.onmessage = function(event) {
     const message = event.data;
     const data = JSON.parse(message);
 
-    const dataType = data.dataType; // QuizDto QuizResultDto GuideMessage
+    const dataType = data.dataType;
     if (dataType === 'QuizDto') {
         quizResultOff();
         guideMessageOff();
