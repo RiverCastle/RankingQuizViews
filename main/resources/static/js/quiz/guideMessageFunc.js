@@ -1,4 +1,4 @@
-function guideMessageOn(guideMessage) {
+async function guideMessageOn(guideMessage) {
     if (guideMessage.display) {
         let guideMessageContainer = document.getElementById('guideMessageContainer');
         guideMessageContainer.innerText = guideMessage.message;
@@ -7,10 +7,10 @@ function guideMessageOn(guideMessage) {
             guideMessageContainer.classList.remove('hidden');
         }
     }
+    await sleep(3500);
 }
 
-async function guideMessageOff() {
-    await sleep(3000);
+function guideMessageOff() {
     let guideMessageContainer = document.getElementById('guideMessageContainer');
     if (guideMessageContainer) {
         guideMessageContainer.innerText = '';
