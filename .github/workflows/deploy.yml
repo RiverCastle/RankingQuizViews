@@ -36,13 +36,6 @@ jobs:
           chmod 600 private_key.pem
           scp -i private_key.pem -r main/* $username@$host:$target_path
 
-      - name: Move ranking-quiz.conf to nginx sites-enabled
-        env:
-          username: ${{ secrets.SSH_USER }}
-          host: ${{ secrets.REMOTE_SERVER }}
-        run: |
-          ssh -i private_key.pem $username@$host "sudo mv /resources/nginx_config/ranking-quiz.conf /etc/nginx/sites-enabled/default"
-
       - name: Nginx restart
         env:
           PEM_KEY: ${{ secrets.PEM_KEY }}  # PEM 키를 GitHub Secrets에 저장
