@@ -34,6 +34,7 @@ jobs:
         run: |
           echo "${{ secrets.PEM_KEY }}" > private_key.pem
           chmod 600 private_key.pem
+          chmod +r main/resources/nginx_config/*
           scp -i private_key.pem -r main/* $username@$host:$target_path
           scp -i private_key.pem main/resources/nginx_config/* $username@$host:$nginx_conf_path
 
