@@ -22,21 +22,26 @@ socket.onclose = function() {
     window.open('/feedback', '_blank'); // 새 창으로 feedback.html 열기
 };
 
-socket.onmessage = function(event) {
+socket.onmessage = async function(event) {
     const message = event.data;
     const data = JSON.parse(message);
     const dataType = data.dataType;
 
     if (dataType === 'QuizDto') {
         quizResultOff();
-        guideMessageOff();
-        quizItemOn(data.object);
+        quizItemUpdate(data.object);
+        quizBoxOn();
     } else if (dataType === 'QuizResultDto') {
         guideMessageOff();
-        guideMessageOff();
-        quizResultOn(data.object);
+        quizBoxOff();
+        quizResultUpdate(data.object);
+        quizResultOn();
+        await sleep(3500);
+        quizResultOff();
     } else if (dataType === 'GuideMessage') {
+        console.log(data.object);
         guideMessageOn(data.object);
+        await sleep(3500);
         guideMessageOff();
     }
 }
