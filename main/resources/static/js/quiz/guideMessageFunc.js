@@ -1,4 +1,4 @@
-async function guideMessageOn(guideMessage) {
+function guideMessageOn(guideMessage) {
     if (guideMessage.display) {
         let guideMessageContainer = document.getElementById('guideMessageContainer');
         guideMessageContainer.innerText = guideMessage.message;
@@ -7,7 +7,6 @@ async function guideMessageOn(guideMessage) {
             guideMessageContainer.classList.remove('hidden');
         }
     }
-    await sleep(3500);
 }
 
 function guideMessageOff() {
@@ -18,6 +17,4 @@ function guideMessageOff() {
     }
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+
