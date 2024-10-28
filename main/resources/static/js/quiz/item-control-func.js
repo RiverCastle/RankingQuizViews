@@ -1,9 +1,7 @@
 function waitingStatusItemOn() {
     // 배경 설정
     document.body.style.background = "linear-gradient(135deg, #ff4e50, #fc913a)";
-
     const waitingStatusItemDiv = document.getElementById('waitingStatusItemDiv');
-
     if (waitingStatusItemDiv) {
         waitingStatusItemDiv.classList.remove('hidden'); // hidden 클래스를 제거하여 요소를 보임
     }
