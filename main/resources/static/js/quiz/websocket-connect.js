@@ -2,7 +2,7 @@ const wsUrl = 'ws://' + BACKEND_BASE_URL + '/ws/quiz';
 
 // 버튼 클릭 이벤트 리스너 추가
 document.getElementById('stop-button').addEventListener('click', function() {
-    quizItemOff();
+    quizBoxOff();
     quizResultOff();
     guideMessageOff();
     socket.close(); // 웹소켓 연결 종료
