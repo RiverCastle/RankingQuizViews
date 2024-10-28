@@ -32,6 +32,8 @@ socket.onmessage = function(event) {
         guideMessageOff();
         quizItemOn(data.object);
     } else if (dataType === 'QuizResultDto') {
+        guideMessageOff();
+        guideMessageOff();
         quizResultOn(data.object);
     } else if (dataType === 'GuideMessage') {
         guideMessageOn(data.object);
