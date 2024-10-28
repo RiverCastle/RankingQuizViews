@@ -1,9 +1,7 @@
 function waitingStatusItemOn() {
     // 배경 설정
     document.body.style.background = "linear-gradient(135deg, #ff4e50, #fc913a)";
-
     const waitingStatusItemDiv = document.getElementById('waitingStatusItemDiv');
-
     if (waitingStatusItemDiv) {
         waitingStatusItemDiv.classList.remove('hidden'); // hidden 클래스를 제거하여 요소를 보임
     }
@@ -60,12 +58,7 @@ function quizItemUpdate(quizObject) {
         if (timeLeft <= 0) {
             clearInterval(countdownInterval);
             countdownElement.textContent = '0.0';
-            console.log(answerData);
-            console.log(messageWrapper);
             socket.send(JSON.stringify(messageWrapper));
-            console.log("전송완료");
-            console.log(JSON.stringify(messageWrapper));
-
             quizBoxOff(); // 퀴즈 종료 시 요소 숨김
         } else {
             const secondsLeft = Math.ceil(timeLeft / 1000);
@@ -92,7 +85,6 @@ function quizItemUpdate(quizObject) {
 
         button.onclick = function() {
             let userNameContainer = document.getElementById('nameInput');
-            console.log(userNameContainer.value);
             answerData.userAnswer = option;
             answerData.writtenAt = new Date().toISOString();
             answerData.userName = userNameContainer.value;
