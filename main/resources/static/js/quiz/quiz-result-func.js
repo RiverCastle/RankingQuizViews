@@ -1,4 +1,4 @@
-function quizResultOn(quizResultObject) {
+function quizResultUpdate(quizResultObject) {
     let quizResultContainer = document.getElementById('quizResultContainer');
     let statementContainer = document.getElementById('statement');
     let isCorrectContainer = document.getElementById('isCorrect');
@@ -23,22 +23,14 @@ function quizResultOn(quizResultObject) {
     } else {
         myAnswerContainer.innerText = "내 답변:정답을 입력하지 못했어요 😭"
     }
-
-    // 결과를 표시
-    showQuizResult()
+    quizResultOn();
 }
 
 
 function quizResultOff() {
-    let quizResultContainer = document.getElementById('quizResultContainer');
-    quizResultContainer.classList.add('hidden'); // hidden 클래스를 추가하여 요소를 숨김
-
+    document.getElementById('quizResultContainer').classList.add('hidden');;
 }
 
-function showQuizResult() {
-    let quizResultContainer = document.getElementById('quizResultContainer');
-    // 'hidden' 클래스가 있을 경우 제거
-    if (quizResultContainer.classList.contains('hidden')) {
-        quizResultContainer.classList.remove('hidden');
-    }
+function quizResultOn() {
+    document.getElementById('quizResultContainer').classList.remove('hidden');
 }

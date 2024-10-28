@@ -9,8 +9,7 @@ function guideMessageOn(guideMessage) {
     }
 }
 
-async function guideMessageOff() {
-    await sleep(3000);
+function guideMessageOff() {
     let guideMessageContainer = document.getElementById('guideMessageContainer');
     if (guideMessageContainer) {
         guideMessageContainer.innerText = '';
@@ -18,6 +17,4 @@ async function guideMessageOff() {
     }
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+

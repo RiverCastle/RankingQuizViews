@@ -12,16 +12,13 @@ function waitingStatusItemOn() {
 
 function waitingStatusItemOff() {
     const waitingStatusItemDiv = document.getElementById('waitingStatusItemDiv');
-
     if (waitingStatusItemDiv) {
         waitingStatusItemDiv.classList.add('hidden'); // hidden 클래스를 추가하여 요소를 숨김
     }
 }
 
-
-function quizItemOn(quizObject) {
+function quizItemUpdate(quizObject) {
     // 대기 상태 종료
-    waitingStatusItemOff();
     document.body.style.background = "linear-gradient(135deg, #00b09b, #96c93d)";
 
     // 퀴즈 데이터 초기화
@@ -69,7 +66,7 @@ function quizItemOn(quizObject) {
             console.log("전송완료");
             console.log(JSON.stringify(messageWrapper));
 
-            quizItemOff(); // 퀴즈 종료 시 요소 숨김
+            quizBoxOff(); // 퀴즈 종료 시 요소 숨김
         } else {
             const secondsLeft = Math.ceil(timeLeft / 1000);
             countdownElement.textContent = (secondsLeft / 10).toFixed(1);
@@ -111,42 +108,16 @@ function quizItemOn(quizObject) {
                 }
             });
         };
-
         optionsContainer.appendChild(button);
     });
-
-    showQuizItems(); // 퀴즈 항목 보이기
 }
 
-function quizItemOff() {
+function quizBoxOff() {
     // 퀴즈 관련 요소 숨김 처리
-    const elements = [
-        document.getElementById('quizId'),
-        document.getElementById('quizStatement'),
-        document.getElementById('optionsContainer'),
-        document.getElementById('countdown')
-    ];
-
-    elements.forEach(element => {
-        if (element) {
-            element.classList.add('hidden'); // hidden 클래스를 추가하여 요소를 숨김
-        }
-    });
+    document.getElementById('quizBox').classList.add('hidden');
 }
 
-
-function showQuizItems() {
-    const elements = [
-        document.getElementById('quizId'),
-        document.getElementById('quizStatement'),
-        document.getElementById('optionsContainer'),
-        document.getElementById('countdown')
-    ];
-
-    elements.forEach(element => {
-        if (element) {
-            element.classList.remove('hidden'); // hidden 클래스를 제거하여 요소를 보이게 함
-        }
-    });
+function quizBoxOn() {
+    document.getElementById('quizBox').classList.remove('hidden');
 }
 
