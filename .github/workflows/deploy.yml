@@ -30,10 +30,13 @@ jobs:
           host: ${{ secrets.REMOTE_SERVER }}
           key: ${{ secrets.PEM_KEY }}
           target_path: ${{ secrets.target_path }}
+          nginx_conf_path : ${{ secrets.NGINX_CONF_FILE_PATH }}
         run: |
           echo "${{ secrets.PEM_KEY }}" > private_key.pem
           chmod 600 private_key.pem
           scp -i private_key.pem -r main/* $username@$host:$target_path
+          scp -i private_key.pem main/resources/default $username@$host:$nginx_conf_path
+
 
       - name: Nginx restart
         env:
