@@ -10,9 +10,9 @@ addInconvenienceButton.addEventListener('click', function() {
     const select = document.createElement('select');
     select.className = 'feedback-category';
     select.innerHTML = `
-        <option value="FEATURE">기능</option>
-        <option value="SCREEN">화면</option>
-        <option value="UNCATEGORIZED">미분류</option>
+        <option value="BackendIssue">기능</option>
+        <option value="FrontendIssue">화면</option>
+        <option value="NotSelected">미분류</option>
     `;
 
     const newTextarea = document.createElement('textarea');
