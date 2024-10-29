@@ -17,14 +17,18 @@ h4 {
     margin-bottom: 1%;
 }
 
+.text-input-container {
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+}
+
 .feedback {
-    width: 100%;
+    width: 98%;
     height: 10%;
     margin-bottom: 2%;
     padding: 1%;
     border: 1px solid #ccc;
     border-radius: 5px;
-    resize: vertical;
 }
 
 .submit-btn {
