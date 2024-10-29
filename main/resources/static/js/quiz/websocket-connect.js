@@ -11,7 +11,7 @@ document.getElementById('stop-button').addEventListener('click', function() {
 const socket = new WebSocket(wsUrl);
 
 socket.onopen = function() {
-    waitingStatusItemOn();
+    backgroundColorChange();
 };
 
 socket.onerror = function(error) {
