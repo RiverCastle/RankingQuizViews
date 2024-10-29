@@ -3,6 +3,7 @@
     box-sizing: border-box; /* 요소의 크기를 패딩과 보더 포함하도록 설정 */
     flex-direction: column;
     flex-wrap: nowrap;
+    align-items: center;
 }
 
 #quizForm {
@@ -12,6 +13,7 @@
     margin: 10px auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 #nameInput {
