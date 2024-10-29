@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking Quiz Room</title>
-    <link rel="stylesheet" href="/css/quiz/waiting-screen.css">
+    <link rel="stylesheet" href="/css/quiz/quiz-common.css">
+    <link rel="stylesheet" href="/css/quiz/guide-message.css">
+    <link rel="stylesheet" href="/css/quiz/quiz-result-item.css">
+    <link rel="stylesheet" href="/css/quiz/quiz-item-container.css">
+    <link rel="stylesheet" href="/css/quiz/stop-button.css">
+    <link rel="stylesheet" href="/css/quiz/waitingMessageContainer.css">
 </head>
 <body>
-<div id="waitingStatusItemDiv" class="waiting-screen" style="visibility: hidden;">
-    <h2 id="message">현재 퀴즈가 종료될 때까지 잠시만 기다려주세요.</h2>
-</div>
-
 <div id="quizBox">
-    <div id="quizContainer">
-        <div><div id="quizId"></div> <input type="text" placeholder="여기에 이름/별명을 입력하세요" id="nameInput"></div>
-        <div id="quizStatement"></div>
+    <h1 id="quizStatement"></h1>
+    <div id="quizForm">
+        <div id="quizId"></div>
+        <input type="text" placeholder="여기에 이름/별명을 입력하세요" id="nameInput">
         <div id="countdown"></div>
     </div>
     <div id="optionsContainer"></div>
@@ -26,7 +28,6 @@
 
 <div id="guideMessageContainer"></div>
 <button id="stop-button">퀴즈 그만하기</button>
-
 <script src="/js/common/config.js"></script>
 <script src="/js/quiz/item-control-func.js"></script>
 <script src="/js/quiz/quiz-result-func.js"></script>
