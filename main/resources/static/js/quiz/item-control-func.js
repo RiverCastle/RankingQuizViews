@@ -97,6 +97,7 @@ function quizItemUpdate(quizObject) {
         };
         optionsContainer.appendChild(button);
     });
+    quizBoxOn();
 }
 
 function quizBoxOff() {
