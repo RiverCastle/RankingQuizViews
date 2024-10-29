@@ -49,8 +49,8 @@ function quizItemUpdate(quizObject) {
             socket.send(JSON.stringify(messageWrapper));
             quizBoxOff(); // 퀴즈 종료 시 요소 숨김
         } else {
-            const secondsLeft = Math.ceil(timeLeft / 1000);
-            countdownElement.textContent = (secondsLeft / 10).toFixed(1);
+            const secondsLeft = (timeLeft / 1000).toFixed(1); // 시간을 초 단위로 환산하고 소수점 첫째 자리까지 표현
+            countdownElement.textContent = secondsLeft;
         }
     }, 100);
 
