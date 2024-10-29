@@ -34,7 +34,7 @@ submitButton.addEventListener('click', function() {
 
     // 서버에 데이터 전송
     if (userFeedbackDtos.length > 0) {
-        fetch('http://' + BACKEND_BASE_URL + '/user-feedback', {
+        fetch('https://' + BACKEND_BASE_URL + '/user-feedback', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
