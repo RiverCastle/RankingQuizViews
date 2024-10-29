@@ -1,18 +1,6 @@
-function waitingStatusItemOn() {
+function backgroundColorChange() {
     // 배경 설정
     document.body.style.background = "linear-gradient(135deg, #ff4e50, #fc913a)";
-    const waitingStatusItemDiv = document.getElementById('waitingStatusItemDiv');
-    if (waitingStatusItemDiv) {
-        waitingStatusItemDiv.classList.remove('hidden'); // hidden 클래스를 제거하여 요소를 보임
-    }
-}
-
-
-function waitingStatusItemOff() {
-    const waitingStatusItemDiv = document.getElementById('waitingStatusItemDiv');
-    if (waitingStatusItemDiv) {
-        waitingStatusItemDiv.classList.add('hidden'); // hidden 클래스를 추가하여 요소를 숨김
-    }
 }
 
 function quizItemUpdate(quizObject) {
@@ -38,7 +26,7 @@ function quizItemUpdate(quizObject) {
     };
 
     // 퀴즈 컨테이너
-    let quizContainer = document.getElementById('quizContainer');
+    let quizContainer = document.getElementById('quizForm');
 
     // QuizID 요소 재할당
     let quizIdElement = document.getElementById('quizId');
@@ -69,7 +57,14 @@ function quizItemUpdate(quizObject) {
     // QuizStatement 요소 생성 또는 재할당
     let statementElement = document.getElementById('quizStatement');
     statementElement.textContent = quizObject.quizContentDto.statement; // 내용 재할당
-
+    const textLength = quizObject.quizContentDto.statement.length;
+    if (textLength < 10) {
+        quizStatement.style.fontSize = '300%'; // 큰 글씨
+    } else if (textLength < 20) {
+        quizStatement.style.fontSize = '200%'; // 중간 글씨
+    } else {
+        quizStatement.style.fontSize = '100%'; // 작은 글씨
+    }
 
     // 옵션 컨테이너 재할당
     const optionsContainer = document.getElementById('optionsContainer');
@@ -107,9 +102,18 @@ function quizItemUpdate(quizObject) {
 function quizBoxOff() {
     // 퀴즈 관련 요소 숨김 처리
     document.getElementById('quizBox').classList.add('hidden');
+    // optionsContainer 요소를 선택
+    const optionsContainer = document.getElementById('optionsContainer');
+    // display 속성을 none으로 변경
+    optionsContainer.style.display = 'none';
+
 }
 
 function quizBoxOn() {
     document.getElementById('quizBox').classList.remove('hidden');
+    // optionsContainer 요소를 선택
+    const optionsContainer = document.getElementById('optionsContainer');
+    // display 속성을 none으로 변경
+    optionsContainer.style.display = 'grid';
 }
 
