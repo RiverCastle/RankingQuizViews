@@ -39,7 +39,6 @@ socket.onmessage = async function(event) {
         await sleep(3500);
         quizResultOff();
     } else if (dataType === 'GuideMessage') {
-        console.log(data.object);
         guideMessageOn(data.object);
         await sleep(3500);
         guideMessageOff();
