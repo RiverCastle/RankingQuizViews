@@ -42,20 +42,11 @@ submitButton.addEventListener('click', function() {
             body: JSON.stringify(userFeedbackDtos)
         })
         .then(response => {
-            if (response.ok) {
-                return response.json();
+            if (!response.ok) {
+                throw new Error('서버 응답이 실패했습니다.'); // 응답이 실패한 경우 에러 발생
             }
-            throw new Error('네트워크 응답이 좋지 않습니다.');
-        })
-        .then(data => {
-            console.log('서버 응답:', data);
             alert('피드백이 성공적으로 제출되었습니다.');
+            location.reload(); // 페이지 새로 고침
         })
-        .catch(error => {
-            console.error('문제가 발생했습니다:', error);
-            alert('피드백 제출에 실패했습니다.');
-        });
-    } else {
-        alert('제출할 피드백이 없습니다.');
     }
 });
