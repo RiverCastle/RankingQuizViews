@@ -1,4 +1,4 @@
-const wsUrl = 'ws://' + BACKEND_BASE_URL + '/ws/quiz';
+const wsUrl = 'wss://' + BACKEND_BASE_URL + '/ws/quiz';
 
 // 버튼 클릭 이벤트 리스너 추가
 document.getElementById('stop-button').addEventListener('click', function() {
