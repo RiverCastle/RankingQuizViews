@@ -11,10 +11,9 @@ function quizItemUpdate(quizObject) {
     const quizId = quizObject.quizId;
     const writtenAt = new Date().toISOString();
     let userAnswer = null;
-    let userName = null;
 
     const answerData = {
-        userName: name,
+        userName: userName,
         quizId: quizId,
         writtenAt: writtenAt,
         userAnswer: userAnswer
@@ -79,10 +78,9 @@ function quizItemUpdate(quizObject) {
         button.className = 'optionButton';
 
         button.onclick = function() {
-            let userNameContainer = document.getElementById('nameInput');
             answerData.userAnswer = option;
             answerData.writtenAt = new Date().toISOString();
-            answerData.userName = userNameContainer.value;
+            answerData.userName = userName;
 
             // 클릭된 버튼에 클래스 추가하여 가시적 변화
             this.classList.add('clicked');
