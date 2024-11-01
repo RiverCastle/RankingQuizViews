@@ -5,5 +5,5 @@ document.getElementById('quizButton').addEventListener('click', function() {
         return;
     }
     sessionStorage.setItem('userName', userName);
-    window.location.href = 'http://' + FRONTEND_BASE_URL + '/quiz';
+    window.location.href = 'https://' + FRONTEND_BASE_URL + '/quiz';
 });
