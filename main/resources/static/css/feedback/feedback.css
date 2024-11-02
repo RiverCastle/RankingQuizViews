@@ -13,22 +13,29 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h2, h3 {
+    font-size: 3vw;
+}
+
+h4 {
+    font-size: 4vw;
+}
+
 .feedback-title {
     margin-top: 2%;
     margin-bottom: 1%;
 }
 
 .text-input-container {
+    font-size: 4vw;
     display: flex;
     justify-content: center; /* 수평 가운데 정렬 */
 }
 
 .feedback {
-    width: 98%;
-    height: 10%;
     width: 100%;
-    height: 20%;
-    font-size: 100%;
+    height: 30%;
+    font-size: 4vw;
     margin-bottom: 2%;
     padding: 1%;
     border: 1px solid #ccc;
@@ -36,20 +43,23 @@ body {
     resize: none;
 }
 
+.feedback-category {
+    height: 3vh;
+    font-size: 5vw;
+}
+
 .submit-btn {
-    width: 100%;
-    width: 90%;
-    height: 8%;
+    width: 95vw;
+    height: 8vh;
     padding: 1%;
     background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 7vw;
     margin: 0 auto; /* 수평 가운데 정렬 추가 */
     display: block; /* block으로 설정하여 margin auto가 적용되도록 함 */
-    font-size: 95%;
 }
 
 .button-container {
@@ -60,7 +70,8 @@ body {
 
 .add-btn {
     width: 40%;
-    height: 15%;
+    font-size: 4vw;
+    height: 5vh;
     background-color: #00A3E0;
     color: white;
     border-radius: 5px;
@@ -69,7 +80,8 @@ body {
 
 .remove-btn {
     width: 40%;
-    height: 20%;
+    font-size: 4vw;
+    height: 5vh;
     background-color: #FFA07A;
     color: white;
     border-radius: 5px;
@@ -80,6 +92,7 @@ body {
 }
 
 .example {
+    font-size: 2vw;
     margin-top: 0%; /* 상단 여백 설정 */
     margin-bottom: 1%; /* 하단 여백 설정 */
 }

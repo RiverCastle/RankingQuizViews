@@ -1,13 +1,14 @@
 .user-button {
     padding: 10px 20px;
-    width: 50%;
-    height: 100%;
-    font-size: 100%;
+    width: 70vw;
+    height: 10vh;
+    font-size: 10vw;
     color: white;
     background-color: #66ff66;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .user-button:hover {
