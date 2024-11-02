@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -7,7 +8,6 @@ body {
     background-color: #5e2b91;
     color: white;
     font-family: 'Arial', sans-serif;
-    position: relative;
 }
 
 .container {
