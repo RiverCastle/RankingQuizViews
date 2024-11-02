@@ -29,7 +29,7 @@ fetch(protocol + BACKEND_BASE_URL + '/quiz-results/my-results', {
 
         const myAnswerElement = document.createElement('div');
         myAnswerElement.className = 'my-answer';
-        myAnswerElement.textContent = `내가 쓴 답: ${result.myAnswer}`;
+        myAnswerElement.textContent = `제출: ${result.myAnswer}`;
 
         answerContainer.appendChild(answerElement);
         answerContainer.appendChild(myAnswerElement);

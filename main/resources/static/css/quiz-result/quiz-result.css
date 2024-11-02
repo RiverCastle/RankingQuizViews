@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 1vh;
     background-color: #f4f4f4;
+    justify-content: center;
 }
 
 .quiz-results-container {
@@ -22,7 +23,7 @@ body {
 
 .statement {
     flex: 1; /* 왼쪽에 위치 */
-    font-size: 8vw;
+    font-size: 7vw;
 }
 
 .answer-container {
@@ -31,7 +32,11 @@ body {
     align-items: flex-end;
 }
 
-.answer, .my-answer {
-    font-size: 7vw;
+.answer {
+    font-size: 6vw;
+    margin-top: 1vh;
+}
+.my-answer {
+    font-size: 4vw;
     margin-top: 1vh;
 }

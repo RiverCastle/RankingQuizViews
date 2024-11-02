@@ -17,11 +17,11 @@ function quizResultUpdate(quizResultObject) {
 
     // 문제, 정답과 사용자의 답변 표시
     statementContainer.innerText = "문제: " + quizResultObject.statement;
-    quizAnswerContainer.innerText = "퀴즈 정답: " + quizResultObject.answer + " 🎉"; // 축하 이모지 추가
+    quizAnswerContainer.innerText = "정답: " + quizResultObject.answer + " 🎉"; // 축하 이모지 추가
     if (quizResultObject.myAnswer != null) {
         myAnswerContainer.innerText = "내 답변: " + quizResultObject.myAnswer;
     } else {
-        myAnswerContainer.innerText = "내 답변:정답을 입력하지 못했어요 😭"
+        myAnswerContainer.innerText = "내 답변: 없음 😭"
     }
     quizResultOn();
 }
