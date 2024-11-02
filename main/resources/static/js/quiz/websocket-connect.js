@@ -1,4 +1,4 @@
-const wsUrl = 'wss://' + BACKEND_BASE_URL + '/ws/quiz';
+const wsUrl = websocket_protocol + BACKEND_BASE_URL + '/ws/quiz';
 const userName = sessionStorage.getItem('userName');
 
 // 버튼 클릭 이벤트 리스너 추가
@@ -12,6 +12,14 @@ document.getElementById('stop-button').addEventListener('click', function() {
 const socket = new WebSocket(wsUrl);
 
 socket.onopen = function() {
+    if (sessionStorage.getItem('accessToken')) {
+        const tokenWrapper = {
+            dataType: 'AccessToken',
+            object: sessionStorage.getItem('accessToken')
+        };
+        socket.send(JSON.stringify(tokenWrapper));
+        console.log('엑세스 토큰 전송 완료');
+    }
     backgroundColorChange();
 };
 
