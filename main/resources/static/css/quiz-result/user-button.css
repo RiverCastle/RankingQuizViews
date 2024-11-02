@@ -1,0 +1,15 @@
+.user-button {
+    padding: 10px 20px;
+    width: 50%;
+    height: 100%;
+    font-size: 100%;
+    color: white;
+    background-color: #66ff66;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-button:hover {
+    background-color: #ffcc66;
+}
