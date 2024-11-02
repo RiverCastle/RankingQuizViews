@@ -11,6 +11,7 @@ function quizItemUpdate(quizObject) {
     const quizId = quizObject.quizId;
     const writtenAt = new Date().toISOString();
     let userAnswer = null;
+    const userName = sessionStorage.getItem('username');
 
     const answerData = {
         userName: userName,
