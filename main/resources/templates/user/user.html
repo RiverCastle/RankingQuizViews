@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user/user.css">
+    <link rel="stylesheet" href="/css/user/quiz-button.css">
+    <link rel="stylesheet" href="/css/user/quiz-result-button.css">
+    <title>Ranking Quiz - User Profile</title>
+</head>
+<body>
+<div class="profile-container">
+    <div class="profile-header">
+        <h1 class="username">이름</h1> <button id="name-change-btn">이름 바꾸기</button>
+        <p class="point">현재 점수: <span id="pointValue"></span></p>
+        <img id="rankImage" class="rank-image">
+    </div>
+</div>
+<div class="button-container">
+    <button class="quiz-button" id="quizButton">퀴즈 시작하기</button>
+    <button class="quiz-result-button" id="quizResultButton">퀴즈 결과 보기</button>
+</div>
+<script src="/js/common/config.js"></script>
+<script src="/js/user/user-rank.js"></script>
+<script src="/js/user/user.js"></script>
+<script src="/js/user/name-change.js"></script>
+<script src="/js/user/quiz-button.js"></script>
+<script src="/js/user/quiz-result-button.js"></script>
+</body>
+</html>
