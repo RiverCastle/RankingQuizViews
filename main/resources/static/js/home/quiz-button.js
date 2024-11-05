@@ -1,6 +1,6 @@
 document.getElementById('quizButton').addEventListener('click', function() {
     const username = document.getElementById('nameInput').value.trim();
-    if (userName === "") {
+    if (username === "") {
         alert("이름/별명을 입력해주세요.");
         return;
     }
