@@ -46,7 +46,6 @@ function quizItemUpdate(quizObject) {
         if (timeLeft <= 0) {
             clearInterval(countdownInterval);
             countdownElement.textContent = '0.0';
-            socket.send(JSON.stringify(messageWrapper));
             quizBoxOff(); // 퀴즈 종료 시 요소 숨김
         } else {
             const secondsLeft = (timeLeft / 1000).toFixed(1); // 시간을 초 단위로 환산하고 소수점 첫째 자리까지 표현
@@ -60,10 +59,6 @@ function quizItemUpdate(quizObject) {
     const textLength = quizObject.quizContentDto.statement.length;
     if (textLength < 10) {
         quizStatement.style.fontSize = '300%'; // 큰 글씨
-    } else if (textLength < 20) {
-        quizStatement.style.fontSize = '200%'; // 중간 글씨
-    } else {
-        quizStatement.style.fontSize = '100%'; // 작은 글씨
     }
 
     // 옵션 컨테이너 재할당
@@ -80,9 +75,8 @@ function quizItemUpdate(quizObject) {
 
         button.onclick = function() {
             answerData.userAnswer = option;
-            answerData.writtenAt = new Date().toISOString();
             answerData.userName = userName;
-
+            socket.send(JSON.stringify(messageWrapper));
             // 클릭된 버튼에 클래스 추가하여 가시적 변화
             this.classList.add('clicked');
 
@@ -116,4 +110,3 @@ function quizBoxOn() {
     // display 속성을 none으로 변경
     optionsContainer.style.display = 'grid';
 }
-
