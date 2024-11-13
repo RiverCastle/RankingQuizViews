@@ -35,7 +35,9 @@
     width: 80%;
     height: 30%;
     box-sizing: border-box;
-    font-size: 100%; /* 뷰포트 너비에 따라 글자 크기 조정 */
+    font-size: 6vw; /* 뷰포트 너비에 따라 글자 크기 조정 */
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
     text-align: center; /* 중앙 정렬 */
 }
 
