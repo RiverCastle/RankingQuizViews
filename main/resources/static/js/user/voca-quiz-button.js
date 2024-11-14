@@ -1,4 +1,4 @@
-document.getElementById('voca-quizButton').addEventListener('click', function() {
+document.getElementById('voca-quiz-button').addEventListener('click', function() {
     const nameDiv = document.querySelector('.username');
 
     sessionStorage.setItem('username', nameDiv.textContent);
